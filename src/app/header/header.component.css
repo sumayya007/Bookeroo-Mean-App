@@ -1,0 +1,21 @@
+#header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+   color:black;
+
+}
+#header a:hover{
+    color:orangered ;
+    font-size: 19px;
+}
+.navbar-nav a{
+    color:black;
+    font-size: 16px;
+    font-weight: 500;
+}
+.navbar-toggler{
+    color:orangered;
+ 
+}

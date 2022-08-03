@@ -1,0 +1,26 @@
+
+<section id="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg fixed-top"  style="background-color: transparent;">
+            <a class="navbar-brand" routerLink="/landingpage" style="color: black;font-weight: 630;font-size: 500;margin-left: 5%;">B <span style="color:orangered ;">O O</span> K E R <span style="color:orangered ;">O O</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="color: orangered;">
+              <span class="navbar-toggler-icon">
+               
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav navbar-right " style="margin-left:70%;">
+                <a class="nav-item nav-link" routerLink="/landingpage" *ngIf="!_auth.loggedIn()" style="cursor: pointer;">Home</a>
+                <a class="nav-item nav-link" routerLink="/landingpage" *ngIf="!_auth.loggedIn()" style="cursor: pointer;">About</a>
+                <a class="nav-item nav-link" hrouterLink="/landingpage" *ngIf="!_auth.loggedIn()"  style="cursor: pointer;">Contact</a>
+                <a class="nav-item nav-link" routerLink="/login" *ngIf="!_auth.loggedIn()"  style="cursor: pointer;">Login</a>
+   
+
+                <a class="nav-item nav-link" style="cursor: pointer;" *ngIf="_auth.loggedIn()" (click)="logoutUser()">Logout</a>
+               
+              </div>
+            </div>
+          </nav>
+    </div>
+</section>
+

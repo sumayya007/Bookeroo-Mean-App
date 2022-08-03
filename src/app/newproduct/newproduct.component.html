@@ -1,0 +1,59 @@
+<section id="addProduct" style="min-height: 100vh;">
+    <div class="container">
+
+<div class="card  mx-3" id="productmain">
+    <form (ngSubmit)="AddProduct()">
+        <div class="card-header text-center" style="font-size: 35px;font-weight:400;color: rgb(243, 233, 230);">
+            {{title}}
+            <a class="btn btn-lg btn-danger" routerLink="/products" *ngIf="_auth.loggedIn()"  style="cursor: pointer;float: right;">Books List</a>
+
+        </div>
+        <div class="card-body" id="addContent">
+            <div class="table-responsive">
+                <div class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Product Id</label></td>
+                            <td><input type="text" name="p_id" [(ngModel)]="productItem.productId" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Name</label></td>
+                            <td><input type="text" name="p_name" [(ngModel)]="productItem.productName" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Code</label></td>
+                            <td><input type="text" name="p_code" [(ngModel)]="productItem.productCode" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Date</label></td>
+                            <td><input type="text" name="p_date" [(ngModel)]="productItem.releaseDate" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Description</label></td>
+                            <td><input type="text" name="p_desc" [(ngModel)]="productItem.description" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Price</label></td>
+                            <td><input type="text" name="p_price" [(ngModel)]="productItem.price" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product starRating</label></td>
+                            <td><input type="text" name="p_rating" [(ngModel)]="productItem.starRating" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product imageUrl</label></td>
+                            <td><input type="text" name="p_image" [(ngModel)]="productItem.imageUrl" required></td>
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td><input type="submit" value="Submit" class="btn btn-lg" style="background-color: orangered;"></td>
+                        </tr>
+                    </tbody>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        
+</div>
+</section>

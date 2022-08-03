@@ -1,0 +1,49 @@
+<section id="products">
+    <div class="container col-md-12">
+<div class="card  my-3" id="content">
+    <div class="card-header text-center" style="font-size: 35px;font-weight:400;color: rgb(243, 233, 230);">{{title}}
+  
+        <a class="btn btn-lg btn-danger" routerLink="/add" *ngIf="_auth.loggedIn()"  style="cursor: pointer;float: right;">Add Book</a></div>
+    <div class="card-body " id="productlist">
+        <div class="table-responsive">
+            <div class="table "
+            *ngIf = 'products && products.length'>
+                <thead>
+                    <tr style="background-color:#263b5e;color: white;">
+                        <th><button class="btn btn-primary" (click)='toggleImage()'>{{showImage? 'Hide' : 'Show'}} Image</button></th>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th>Price</th>
+                        <th>5 Start Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>
+                            <img *ngIf='showImage'
+                                [src]="product.imageUrl" 
+                                [title]='product.productName'
+                                [style.width.px]='imageWidth'
+                                [style.margin.px]='imageMargin'>
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.starRating}}</td>
+                        <td>
+                            <button class="btn btn-outline-danger" *ngIf="_auth.loggedIn()" (click)='deleteProduct(product)' style="margin-right: 8px;">Delete</button>
+                            <button class="btn btn-outline-success"  routerLink='update' *ngIf="_auth.loggedIn()"  (click)="editProduct(product)">Edit</button></td>
+                    </tr>
+                   
+                </tbody>
+            </div>
+        </div>
+    </div>
+</div>    
+</div>
+</section>
+
+
